@@ -1,6 +1,7 @@
 "use client"
+export const dynamic = "force-dynamic"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Trophy, Clock, Award, BarChart3, Home, RotateCcw } from "lucide-react"
