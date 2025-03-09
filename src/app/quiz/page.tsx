@@ -32,7 +32,7 @@ const SoundManager = {
       }
     })
   },
-  play: function (src, volume = 0.3) {
+  play: function (src: string, volume = 0.3) {
     if (!this.soundsEnabled) return
     try {
       const audio = new Audio(src)
