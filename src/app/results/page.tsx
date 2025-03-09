@@ -1,7 +1,7 @@
 "use client"
 export const dynamic = "force-dynamic"
 
-import { useEffect, useState, } from "react"
+import { useEffect, useState, Suspense} from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Trophy, Clock, Award, BarChart3, Home, RotateCcw } from "lucide-react"
@@ -77,6 +77,14 @@ const SoundManager = {
 }
 
 export default function ResultsPage() {
+  return (
+    <Suspense fallback={<div>Loading Results...</div>}>
+      <ResultsPageInner />
+    </Suspense>
+  )
+}
+
+function ResultsPageInner() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const score = Number.parseInt(searchParams.get("score") || "0")
